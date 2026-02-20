@@ -70,7 +70,7 @@ public class ZooService implements ZooRepository {
 
     @Override
     public boolean fechaValida(LocalDate fechaRegistro) throws InvalidDateException {
-        if (fechaRegistro.isAfter(LocalDate.now())) {
+        if (fechaRegistro.isBefore(LocalDate.now())) {
             throw new InvalidDateException("La fecha de registro no puede ser superior a la de hoy");
         }
         return true;
